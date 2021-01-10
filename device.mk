@@ -17,6 +17,9 @@
 # Also get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/kminilte/kminilte-vendor.mk)
 
+# MicroG
+$(call inherit-product, vendor/addons/microg/config.mk)
+
 LOCAL_PATH := device/samsung/kminilte
 
 # Overlays
@@ -39,23 +42,9 @@ PRODUCT_PACKAGES += \
     init.wifi.rc \
     ueventd.universal3470.rc
 
-# Mapsapi
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/microg/com.google.android.maps/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
-    $(LOCAL_PATH)/microg/com.google.android.maps/com.google.android.maps.jar:system/framework/com.google.android.maps.jar
-
-# MicroG
-PRODUCT_PACKAGES += \
-   FakeStore \
-   GmsCore \
-   GsfProxy \
-   MozillaNlpBackend \
-   NominatimNlpBackend \
-   OpenWeatherMapWeatherProvider \
-
 # Swypelib
 PRODUCT_COPY_FILES += \
-   $(LOCAL_PATH)/microg/swypelibs/lib/libjni_latinimegoogle.so:/system/lib/libjni_latinimegoogle.so
+   $(LOCAL_PATH)/swypelibs/lib/libjni_latinimegoogle.so:/system/lib/libjni_latinimegoogle.so
 
 # Audio
 PRODUCT_COPY_FILES += \
