@@ -7,37 +7,29 @@
 /dev/video7               0660   media      media
 /dev/video8               0660   media      media
 /dev/video9               0660   media      media
-/dev/video20              0660   system     system
-/dev/fimg2d               0666   system     graphics
-/dev/i2c-2                0660   system     system
-/dev/HPD                  0660   system     system
 
-# gscalers
-/dev/video23              0660   media      graphics
-/dev/video26              0660   media      graphics
-
-/dev/video24              0660   media      graphics
-/dev/video27              0660   media      graphics
-
-# scalers
-/dev/video50              0660   media      graphics
-/dev/video51              0660   media      graphics
-
+# camera
 /dev/v4l-subdev*          0660   system     camera
 /dev/media0               0660   system     camera
 /dev/media1               0660   system     camera
-
-# ALP Audio
-/dev/srp                  0660   system     audio
-
-#mixer
-/dev/video16              0660   system     audio
-/dev/video17              0660   system     system
-/dev/video18              0660   system     system
-/dev/video19              0660   system     system
-
-#CEC
-/dev/CEC                  0660   system     system
+/dev/media2               0660   media      media
+/dev/video100             0660   media      media
+/dev/video101             0660   media      media
+/dev/video102             0660   media      media
+/dev/video103             0660   media      media
+/dev/video110             0660   media      media
+/dev/video111             0660   media      media
+/dev/video112             0660   media      media
+/dev/video114             0660   media      media
+/dev/video115             0660   media      media
+/dev/video116             0660   media      media
+/dev/video130             0660   media      media
+/dev/video134             0660   media      media
+/dev/video137             0660   media      media
+/dev/video140             0660   media      media
+/dev/video141             0660   media      media
+/dev/video146             0660   media      media
+/dev/video149             0660   media      media
 
 #JPEG
 /dev/video11              0660   media      media
@@ -59,31 +51,25 @@
 /dev/CEC                  0660   system     system
 /dev/HPD                  0660   system     system
 
-# camera
-/dev/video0               0660   system     camera
-/dev/video1               0660   system     camera
-/dev/video2               0660   system     camera
-/dev/video3               0660   system     camera
-/dev/video100             0660   media      media
-/dev/video101             0660   media      media
-/dev/video102             0660   media      media
-/dev/video103             0660   media      media
-/dev/video110             0660   media      media
-/dev/video111             0660   media      media
-/dev/video112             0660   media      media
-/dev/video114             0660   media      media
-/dev/video115             0660   media      media
-/dev/video116             0660   media      media
-/dev/video130             0660   media      media
-/dev/video134             0660   media      media
-/dev/video137             0660   media      media
-/dev/video140             0660   media      media
-/dev/video141             0660   media      media
-/dev/video146             0660   media      media
-/dev/video149             0660   media      media
-/dev/media2               0660   media      media
+# ALP Audio
+/dev/srp                  0660   system     audio
 
-/dev/block/mmcblk0p8      0660   system     system
+# Bluetooth
+/dev/ttySAC0              0600   bluetooth    bluetooth
+/dev/unifiudi0            0666   wifi         wifi
+
+# Mixer
+/dev/video16              0660   system     audio
+/dev/video17              0660   system     system
+/dev/video18              0660   system     system
+/dev/video19              0660   system     system
+
+# MobiCore
+/dev/mobicore             0700   system     system
+/dev/mobicore-user        0666   radio     	system
+
+# Secure MEM driver
+/dev/s5p-smem             0660   drm        system
 
 # the UMTS modem device nodes
 /dev/umts*                0660   radio      radio
@@ -99,10 +85,10 @@
 #sensor
 /dev/sec-nfc                  0660   system     nfc
 /dev/iio:device*		  0660	 system     system
-/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* buffer								0731   system     radio
-/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* scan_elements						0731   system     radio
-/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* trigger							0731   system     radio
-/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* power								0731   system     radio
+/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* buffer								0777   system     radio
+/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* scan_elements						0777   system     radio
+/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* trigger							0777   system     radio
+/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* power								0777   system     radio
 /sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* uevent								0660   system     radio
 /sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* dev								0660   system     radio
 /sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* buffer/length						0660   system     radio
@@ -215,34 +201,5 @@
 /sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* dmp_firmware						0660   system     radio
 /sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* pedometer_int_thresh				0660   system     radio
 /sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* pedometer_step_thresh				0660   system     radio
-/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* shealth_cadence					0660   system     radio
-/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* shealth_cadence_enable				0660   system     radio
-/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* shealth_int_period					0660   system     radio
-/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* event_shealth_int					0660   system     radio
-/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* shealth_instant_cadence			0660   system     radio
-/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* shealth_flush_cadence				0660   system     radio
-/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* shealth_freq_threshold				0660   system     radio
-/sys/devices/platform/s3c2440-i2c.7/i2c-7/7-0068/iio:device* shealth_timer						0660   system     radio
-
 # FM Radio
 /dev/radio0               0660   system     audio
-
-# Bluetooth
-/dev/ttySAC0              0600   bluetooth    bluetooth
-/dev/unifiudi0            0666   wifi         wifi
-
-# MobiCore
-/dev/mobicore             0700   system     system
-/dev/mobicore-user        0666   radio     	system
-
-# Secure MEM driver
-/dev/s5p-smem             0660   drm     drmrpc
-
-# sensorhub
-/dev/ssp_sensorhub        0660   system     system
-
-# Reactivation Lock
-/dev/block/mmcblk0rpmb	0660	system	system
-
-# Fingerprint Sensor
-/dev/vfsspi               0660   system     system

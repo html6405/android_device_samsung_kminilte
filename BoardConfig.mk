@@ -17,10 +17,10 @@
 # inherit from common smdk3470
 -include device/samsung/smdk3470-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/samsung/kminilte
+DEVICE_PATH := device/samsung/degaslte
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := kminiltexx,kminiltedv,kminilteub,kminilte
+TARGET_OTA_ASSERT_DEVICE := degasltexx,degasltezt,degaslte
 
 # Filesystems
 # Note: the BOARD_...IMAGE_PARTITION_SIZE values define the image sizes, 
@@ -44,7 +44,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12833521664
 TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 
 # Kernel
-TARGET_KERNEL_CONFIG := kminilte_00_defconfig
+TARGET_KERNEL_CONFIG := cm_degaslte_00_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/kminilte
 
 # CMHW
@@ -77,8 +77,8 @@ TARGET_PROVIDES_LIBSENSORS := true
 BOARD_EGL_NEEDS_HANDLE_VALUE := true
 
 # Vendor Init
-TARGET_INIT_VENDOR_LIB := libinit_kminilte
-TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_kminilte.cpp
+TARGET_INIT_VENDOR_LIB := libinit_degaslte
+TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_degaslte.cpp
 
 # Recovery
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
@@ -89,7 +89,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 ifeq ($(TARGET_BUILD_VARIANT),userdebug)
 RECOVERY_VARIANT := twrp
 endif
-DEVICE_RESOLUTION := 720x1280
+DEVICE_RESOLUTION := 800x1280
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
 TW_BRIGHTNESS_PATH := /sys/devices/platform/s5p-mipi-dsim.0/backlight/panel/brightness
@@ -97,8 +97,12 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_CRYPTO := true
-#TW_USE_TOOLBOX := true
+TW_USE_TOOLBOX := true
 TWRP_INCLUDE_LOGCAT := true
+TW_EXCLUDE_TZDATA := true
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_BASH := true
+TW_SCREEN_BLANK_ON_BOOT := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \

@@ -1,4 +1,4 @@
-# Copyright (C) 2011-2013 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,22 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH:= $(call my-dir)
-include $(CLEAR_VARS)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# Inherit from degaslte device
+$(call inherit-product, device/samsung/degaslte/device.mk)
 
-LOCAL_MODULE_TAGS := optional
-
-LOCAL_STATIC_JAVA_LIBRARIES := android-support-v13
-
-LOCAL_SRC_FILES := $(call all-java-files-under, src)
-
-LOCAL_PACKAGE_NAME := AriesParts
-LOCAL_CERTIFICATE := platform
-LOCAL_PRIVILEGED_MODULE := true
-
-# Required so that symbols used by the jni library doesn't get stripped out
-LOCAL_PROGUARD_ENABLED := disabled
-
-include $(BUILD_PACKAGE)
-
-include $(call all-makefiles-under,$(LOCAL_PATH))
+# Set those variables here to overwrite the inherited values.
+PRODUCT_NAME := full_degaslte
+PRODUCT_DEVICE := degaslte
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := SM-G800

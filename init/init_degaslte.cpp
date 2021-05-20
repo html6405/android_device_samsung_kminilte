@@ -55,26 +55,19 @@ void vendor_load_properties()
         return;
 
     std::string bootloader = property_get("ro.bootloader");
-    if (bootloader.find("G800F") == 0) {
-        /* kminiltexx */
-        property_override("ro.build.fingerprint", "samsung/kminiltexx/kminilte:6.0.1/MMB29K/G800FXXU1CPK5:user/release-keys");
-        property_override("ro.build.description", "kminiltexx-user 6.0.1 MMB29K G800FXXU1CPK5 release-keys");
-        property_override("ro.product.model", "SM-G800F");
-        property_override("ro.product.device", "kminiltexx");
-    } else if (bootloader.find("G800Y") == 0) {
-        /* kminiltedv */
-        property_override("ro.build.fingerprint", "samsung/kminiltedv/kminilte:5.1.1/LMY49J/G800YUIS1BPL1:user/release-keys");
-        property_override("ro.build.description", "kminiltedv-user 5.1.1 LMY49J G800YUIS1BPL1 release-keys");
-        property_override("ro.product.model", "SM-G800Y");
-        property_override("ro.product.device", "kminiltedv");
-    } else if (bootloader.find("G800M") == 0) {
-        /* kminilteub */
-        property_override("ro.build.fingerprint", "samsung/kminilteub/kminilte:6.0.1/MMB29K/G800MUBU1CPL1:user/release-keys");
-        property_override("ro.build.description", "kminilteub-user 6.0.1 MMB29K G800MUBU1CPL1 release-keys");
-        property_override("ro.product.model", "SM-G800M");
-        property_override("ro.product.device", "kminilteub");
+    if (bootloader.find("T235Y") == 0) {
+        property_override("ro.build.fingerprint", "samsung/degasltezt/degaslte:4.4.2/KOT49H/T235YZTU1AOD1:user/release-keys");
+        property_override("ro.build.description", "degasltezt-user 4.4.2 KOT49H T235YZTU1AOD1 release-keys");
+        property_override("ro.product.model", "SM-T235Y");
+        property_override("ro.product.device", "degasltezt");
+    } else if (bootloader.find("T235") == 0) {
+        property_override("ro.build.fingerprint", "samsung/degasltexx/degaslte:4.4.2/KOT49H/T235XXU1AOD1:user/release-keys");
+        property_override("ro.build.description", "degasltexx-user 4.4.2 KOT49H T235XXU1AOD1 release-keys");
+        property_override("ro.product.model", "T235");
+        property_override("ro.product.device", "degasltexx");
     }
-    
+
     std::string device = property_get("ro.product.device");
     INFO("Found bootloader id %s setting build properties for %s device\n", bootloader.c_str(), device.c_str());
 }
+

@@ -1,5 +1,5 @@
 
-# Device configuration for Samsung Galaxy S5 mini SM-G800F (kminilte)
+# Device configuration for Samsung Galaxy S5 mini SM-G800F (degaslte)
 
 ## Spec Sheet
 
@@ -83,7 +83,7 @@ Perform the following steps from the above "How to build":
 	
 	However if you already obtained local manifests from a different device, just copy at least the following files into .repo/local_manifests :
 	
-	- https://github.com/cm-3470/android_.repo_local_manifests/blob/cm-14.1/kminilte.xml
+	- https://github.com/cm-3470/android_.repo_local_manifests/blob/cm-14.1/degaslte.xml
 	- https://github.com/cm-3470/android_.repo_local_manifests/blob/cm-14.1/common.xml
 	
 	8.2. Fetch device specific repos by synching all repos
@@ -105,7 +105,7 @@ Perform the following steps from the above "How to build":
 	  
 	```sh
 	$ source build/envsetup.sh
-	$ lunch lineage_kminilte-userdebug
+	$ lunch lineage_degaslte-userdebug
 	```
 	
 	These commands only have a temporary effect, you will have to perform these commands again,   when you use a new terminal window.
@@ -140,8 +140,8 @@ Note that especially the linking process (ld) needs a huge amount of memory. The
 
 When the build-process finished the following files will be available:
 
-	LineageOS image: out/target/product/kminilte/cm-14.1-<date>-UNOFFICIAL-<device>.zip
-	recovery: out/target/product/kminilte/recovery.img
+	LineageOS image: out/target/product/degaslte/cm-14.1-<date>-UNOFFICIAL-<device>.zip
+	recovery: out/target/product/degaslte/recovery.img
 
 ### Rebuild:
 
