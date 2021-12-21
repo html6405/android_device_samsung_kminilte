@@ -89,6 +89,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 ifeq ($(TARGET_BUILD_VARIANT),userdebug)
 RECOVERY_VARIANT := twrp
 endif
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/smdk4412-common/twrp/custombootimg.mk
 DEVICE_RESOLUTION := 800x1280
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
